@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyTrade - Platform Transition Announcement</title>
+<link rel="stylesheet" href="assets/css/mytrade-announcement.css">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0d0c;
+    color: #e8ecea;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .page-header {
+    background-color: #123d32;
+    padding: 18px 24px;
+  }
+  .page-header img {
+    height: 28px;
+    display: block;
+  }
+  .page-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .page-content h1 {
+    color: #f5f7f6;
+  }
+  .page-content p {
+    color: #a8b0ac;
+    line-height: 1.6;
+  }
+  .replay-btn {
+    margin-top: 16px;
+    background-color: #123d32;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .replay-btn:hover {
+    background-color: #19513f;
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <strong style="color:#debd76; font-size:18px;">MyTrade</strong>
+</header>
+
+<main class="page-content">
+  <h1>Welcome to MyTrade</h1>
+  <p>This page demonstrates the announcement pop-up used to notify visitors about the upcoming MyTrade platform transition. The pop-up appears automatically on page load and will not reappear on future visits if the visitor checks "Do not show this again".</p>
+  <button type="button" class="replay-btn" id="replay-announcement">Preview announcement again</button>
+</main>
+
+<!-- MyTrade Announcement Popup: markup can be copied as-is into any page -->
+<div id="mytrade-announcement-overlay" class="mta-overlay" hidden>
+  <div class="mta-modal" role="dialog" aria-modal="true" aria-labelledby="mta-title" aria-describedby="mta-desc" tabindex="-1">
+    <button type="button" class="mta-close" aria-label="Close announcement">&times;</button>
+
+    <span class="mta-badge">Important Announcement</span>
+    <h2 id="mta-title" class="mta-title">We&rsquo;re Moving to the New MyTrade!</h2>
+    <p class="mta-subtitle">A better, faster, and smarter trading experience is on the way.</p>
+
+    <div id="mta-desc" class="mta-body">
+      <p>We&rsquo;re excited to introduce the new MyTrade platform&mdash;designed to give you a faster, smarter, and more seamless trading experience.</p>
+
+      <div class="mta-alert mta-alert--warning">
+        <strong>&#9888;&#65039; Important: GTC Orders</strong>
+        <p>All existing GTC orders will automatically be cancelled before the transition.</p>
+      </div>
+
+      <div class="mta-alert mta-alert--critical">
+        <strong>&#128308; Cut-Over Date</strong>
+        <p>September 30, 2026</p>
+      </div>
+
+      <p class="mta-secure">Your account, funds, and investments remain secure with Abacus Securities Corporation.</p>
+    </div>
+
+    <div class="mta-video-section">
+      <p class="mta-video-label">MyTrade Platform Transition</p>
+      <p class="mta-video-copy">Watch our 1-minute video to learn what&rsquo;s changing and what you need to know.</p>
+      <a href="#" class="mta-btn mta-btn--video" data-video-url="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID">&#9654; Watch Video</a>
+      <div class="mta-video-frame" hidden></div>
+    </div>
+
+    <div class="mta-actions">
+      <button type="button" class="mta-btn mta-btn--primary" id="mta-acknowledge">I Acknowledge</button>
+    </div>
+
+    <label class="mta-checkbox">
+      <input type="checkbox" id="mta-dont-show">
+      Do not show this again
+    </label>
+  </div>
+</div>
+
+<script src="assets/js/mytrade-announcement.js"></script>
+<script>
+  document.getElementById("replay-announcement").addEventListener("click", function () {
+    new MyTradeAnnouncement({ forceShow: true });
+  });
+</script>
+</body>
+</html>
