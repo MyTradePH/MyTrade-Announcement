@@ -82,7 +82,6 @@
 
     this.modal = this.overlay.querySelector(".mta-modal");
     this.closeBtn = this.overlay.querySelector(".mta-close");
-    this.acknowledgeBtn = this.overlay.querySelector("#mta-acknowledge");
     this.dontShowCheckbox = this.overlay.querySelector("#mta-dont-show");
     this.videoTrigger = this.overlay.querySelector(".mta-btn--video");
     this.videoFrame = this.overlay.querySelector(".mta-video-frame");
@@ -105,12 +104,6 @@
 
     if (this.closeBtn) {
       this.closeBtn.addEventListener("click", function () {
-        self.hide();
-      });
-    }
-
-    if (this.acknowledgeBtn) {
-      this.acknowledgeBtn.addEventListener("click", function () {
         self.hide();
       });
     }
