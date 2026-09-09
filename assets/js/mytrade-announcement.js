@@ -49,28 +49,6 @@
     });
   }
 
-  function buildVideoEmbed(url) {
-    if (!url) return null;
-
-    var isDirectFile = /\.(mp4|webm|ogg)(\?.*)?$/i.test(url);
-
-    if (isDirectFile) {
-      var video = document.createElement("video");
-      video.setAttribute("controls", "");
-      video.setAttribute("playsinline", "");
-      video.src = url;
-      return video;
-    }
-
-    var iframe = document.createElement("iframe");
-    iframe.src = url;
-    iframe.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
-    iframe.setAttribute("allowfullscreen", "");
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("title", "MyTrade platform transition video");
-    return iframe;
-  }
-
   function MyTradeAnnouncement(options) {
     options = options || {};
 
@@ -83,9 +61,6 @@
     this.modal = this.overlay.querySelector(".mta-modal");
     this.closeBtn = this.overlay.querySelector(".mta-close");
     this.dontShowCheckbox = this.overlay.querySelector("#mta-dont-show");
-    this.videoTrigger = this.overlay.querySelector(".mta-btn--video");
-    this.videoFrame = this.overlay.querySelector(".mta-video-frame");
-    this.videoUrl = options.videoUrl || (this.videoTrigger && this.videoTrigger.getAttribute("data-video-url"));
     this.forceShow = !!options.forceShow;
     this.lastFocused = null;
 
@@ -108,13 +83,6 @@
       });
     }
 
-    if (this.videoTrigger && this.videoFrame) {
-      this.videoTrigger.addEventListener("click", function (event) {
-        event.preventDefault();
-        self._playVideo();
-      });
-    }
-
     this.overlay.addEventListener("mousedown", this._onOverlayClick);
   };
 
@@ -122,20 +90,6 @@
     if (event.target === this.overlay) {
       this.modal.focus();
     }
-  };
-
-  MyTradeAnnouncement.prototype._playVideo = function () {
-    if (!this.videoUrl || this.videoFrame.getAttribute("data-loaded") === "1") {
-      this.videoFrame.hidden = false;
-      return;
-    }
-
-    var embed = buildVideoEmbed(this.videoUrl);
-    if (!embed) return;
-
-    this.videoFrame.appendChild(embed);
-    this.videoFrame.setAttribute("data-loaded", "1");
-    this.videoFrame.hidden = false;
   };
 
   MyTradeAnnouncement.prototype._onKeydown = function (event) {

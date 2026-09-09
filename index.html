@@ -65,9 +65,6 @@
   <div class="mta-modal" role="dialog" aria-modal="true" aria-labelledby="mta-title" aria-describedby="mta-desc" tabindex="-1">
     <button type="button" class="mta-close" aria-label="Close announcement">&times;</button>
 
-    <div class="mta-icon" aria-hidden="true">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 11A8 8 0 0 0 6.3 6.3L4 8.6" stroke="#123d32" stroke-width="2.2" stroke-linecap="round"/><path d="M4 4v4.6h4.6" stroke="#123d32" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 13a8 8 0 0 0 13.7 4.7L20 15.4" stroke="#123d32" stroke-width="2.2" stroke-linecap="round"/><path d="M20 20v-4.6h-4.6" stroke="#123d32" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
     <span class="mta-badge">Important Announcement</span>
     <h2 id="mta-title" class="mta-title">We&rsquo;re Moving to the New MyTrade!</h2>
     <p class="mta-subtitle">Starting September 30, 2026 &mdash; new platform, same great experience.</p>
@@ -79,18 +76,22 @@
       </div>
     </div>
 
-    <div class="mta-actions">
-      <a href="#" class="mta-btn mta-btn--video" data-video-url="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID">
-        <svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor"/></svg>
-        Your Better Tomorrow
-      </a>
-      <a href="#REPLACE_WITH_LEARN_MORE_URL" class="mta-btn mta-btn--primary">
-        Learn More
-        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-      </a>
-    </div>
+    <a href="#REPLACE_WITH_YOUTUBE_URL" class="mta-video-card" target="_blank" rel="noopener noreferrer" aria-label="Watch Your Better Tomorrow on YouTube">
+      <span class="mta-video-thumb">
+        <span class="mta-video-play" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M9 7l9 5-9 5z" fill="#123d32"/></svg>
+        </span>
+      </span>
+      <span class="mta-video-meta">
+        <span class="mta-video-title">Your Better Tomorrow</span>
+        <span class="mta-video-sub">Watch on YouTube &middot; 1 min</span>
+      </span>
+    </a>
 
-    <div class="mta-video-frame" hidden></div>
+    <a href="#REPLACE_WITH_LEARN_MORE_URL" class="mta-btn mta-btn--primary">
+      Learn More
+      <svg width="14" height="14" viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    </a>
 
     <label class="mta-checkbox">
       <input type="checkbox" id="mta-dont-show">
