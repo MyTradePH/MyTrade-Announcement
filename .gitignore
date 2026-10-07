@@ -1,1 +1,4 @@
 .env
+# ACE-Step skills: per-user API keys and generated audio
+.claude/skills/acestep*/scripts/config.json
+acestep_output/
